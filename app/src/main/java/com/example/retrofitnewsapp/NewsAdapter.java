@@ -47,13 +47,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.content.setText(news.content);
         holder.url.setText(news.url);
         Glide.with(context).load(news.urlToImage).into(holder.urlToImage);
-//        holder.title.setText(news.articles.get(position).title);
-//        holder.author.setText(news.articles.get(position).author);
-//        holder.description.setText(news.articles.get(position).description);
-//        holder.publishedAt.setText(news.articles.get(position).publishedAt);
-//        holder.content.setText(news.articles.get(position).content);
-//        holder.url.setText(news.articles.get(position).url);
-//        Glide.with(context).load(news.articles.get(position).urlToImage).into(holder.urlToImage);
 
         holder.linearLayout.setVisibility(View.GONE);
 
@@ -84,20 +77,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.url.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent=new Intent(Intent.ACTION_VIEW);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                intent.setData(Uri.parse(news.url));
-                //startActivity(intent);
                 Intent i = new Intent(context, web.class);
                 i.putExtra("url", news.url);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
-                //getting the position of the item to expand it
-                //currentPosition = position;
-                Log.e("2", "onClick: " + position);
 
-                //reloding the list
-                //notifyDataSetChanged();
+
             }
         });
 

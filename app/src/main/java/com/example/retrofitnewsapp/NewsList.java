@@ -16,7 +16,6 @@ public class NewsList {
 
     public static class Datum {
 
-        //  @SerializedName("source")
         public NewsList.Datum.Datums source = new NewsList.Datum.Datums();
         @SerializedName("author")
         public String author;
@@ -43,42 +42,14 @@ public class NewsList {
             this.content = content;
         }
 
-        public String getAuthor() {
-            return author;
-        }
+       public class Datums {
 
-        //        public Integer source;
-        // NewsList.Datum.Datums source = gson.fromJson(reader, NewsList.Datum.Datums.class);
-        public class Datums {
-
-            @SerializedName("id")
-            public String id;
-            @SerializedName("name")
-            public String name;
-        }
+           @SerializedName("id")
+           public String id;
+           @SerializedName("name")
+           public String name;
+       }
     }
-
-
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//    public String getDescription() {
-//        return description;
-//    }
-//    public String getUrl() {
-//        return url;
-//    }
-//    public String getUrlToImage() {
-//        return urlToImage;
-//    }
-//    public String getPublishedAt() {
-//        return publishedAt;
-//    }
-//    public String getContent() {
-//        return content;
-//    }
-//
 
 
 }
